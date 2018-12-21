@@ -1,20 +1,21 @@
 $(document).ready(function(){
-  console.log('jQuery loaded');
-
-  // write to local storage from input when button save clicked
-  $('.btn-submit').on('click', function(){
-    localStorage.setItem('inputFieldValue', $('.text-entry').val());
-    var myItemInStorage = localStorage.getItem('inputFieldValue');
-    console.log('myItemInStorage', myItemInStorage);
-
-    // display the value here
-    $('.list-display-field').text(myItemInStorage); // ??
-
+  var todoList = [];  
+   var todo = function(input){
+    var $li = $('ol').append('<li>'+ input +'</li>');
+   };   
+  $('.btn-submit').click(function(){
+    todoList.push($('input').val());
+    localStorage.setItem('list', JSON.stringify(todoList));
+    todo($('input').val());
+    $('input').val('');
   });
-
-  // delete from local storage when delete button clicked
-  $('.btn-delete').on('click', function(){
-    localStorage.removeItem('inputFieldValue');
+  $('.btn-delete').click(function(){
+    var deleteTodo = todoList.splice(0, 1);
+    localStorage.setItem('list', JSON.stringify(todoList));
+    $('ol').html('');
+    todoList.forEach(todo => {
+       $('ol').append('<li>'+ todo +'</li>');
+    });  
   });
 
 });

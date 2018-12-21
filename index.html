@@ -2,21 +2,33 @@
 <html>
   <head>
     <title>HREXT06 Cruddy App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
     <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous"></script>
+     src="https://code.jquery.com/jquery-3.3.1.min.js"
+     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+     crossorigin="anonymous"></script>
     <script src="app.js"></script>
   </head>
-  <body>
-  <div>
-    <input class="text-entry" type="text" placeholder="enter your information">
-    <button class="btn-submit" type="button">save value</button>
-    <button class="btn-delete" type="button">delete value</button>
+
+  <header class='banner'>
+  <h1>My Cruddy Todo List</h1>
+  </header>
+  <body bgcolor= '#B0E0E6'>
+
+  <div class='submit-container'>
+    <button class="btn-submit" type="button">Add Todo</button>
+    <input class="text-entry" type="text" placeholder="Type Todo's Here">  
   </div>
-  <div class="list-display-field">
-    nothing to display yet
+
+  <div class='delete-container'>
+    <button class="btn-delete" type="button">Delete Todo</button>
   </div>
+
+  <div class= 'list'>
+  <ol class="list-display-field">
+  </ol>
+  </div>
+
   </body>
 </html>
+
